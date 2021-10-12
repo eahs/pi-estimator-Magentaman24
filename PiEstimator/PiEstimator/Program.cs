@@ -4,7 +4,7 @@ namespace PiEstimator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
             long n;
             
@@ -24,10 +24,20 @@ namespace PiEstimator
         {
             Random rand = new Random(System.Environment.TickCount);
             double pi = 0.0;
+            double temp = 0.0; 
 
             // TODO: Calculate Pi
 
-            return pi;
+            for (int i = 0; i <= n; i++)
+            {
+                pi = 4 * Math.Atan(.2) - Math.Atan(1 / 239);
+                
+                pi = pi * 4; 
+                //pi = 22 / 7;
+                temp += pi; 
+            }
+
+            return temp / n;
         }
 
         static long GetNumber(string prompt)
