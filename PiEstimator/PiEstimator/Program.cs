@@ -24,24 +24,21 @@ namespace PiEstimator
         {
             Random rand = new Random(System.Environment.TickCount);
             double pi = 0.0;
-            double temp = 0.0; 
+           // double temp = 0.0; 
 
             // TODO: Calculate Pi
-            double x;
-            double y;
             
-
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i <= n; i++)
                 {
-                    x = rand.NextDouble();
-                    y = rand.NextDouble();
+                    double x = rand.NextDouble();
+                    double y = rand.NextDouble();
 
                     if (x * x + y * y <= 1)
                     {
                         pi++;
                     }
                 }
-            return 4*pi / n;
+            return 4 * pi / n;
         }
 
         static long GetNumber(string prompt)
