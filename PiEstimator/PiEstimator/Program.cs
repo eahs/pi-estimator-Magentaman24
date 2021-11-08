@@ -27,17 +27,21 @@ namespace PiEstimator
             double temp = 0.0; 
 
             // TODO: Calculate Pi
+            double x;
+            double y;
+            
 
-            for (int i = 0; i <= n; i++)
-            {
-                pi = 4 * Math.Atan(.2) - Math.Atan(1 / 239);
-                
-                pi = pi * 4; 
-                //pi = 22 / 7;
-                temp += pi; 
-            }
+            for (int i = 0; i < n; i++)
+                {
+                    x = rand.NextDouble();
+                    y = rand.NextDouble();
 
-            return temp / n;
+                    if (x * x + y * y <= 1)
+                    {
+                        pi++;
+                    }
+                }
+            return 4*pi / n;
         }
 
         static long GetNumber(string prompt)
